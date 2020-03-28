@@ -15,12 +15,12 @@ function countReducer(state = initialState, actions) {
     case ADD_NUMBER:
       return {
         ...state,
-        count: state.count + parseInt(actions.number, 1),
+        count: state.count + parseInt(actions.number, 2),
       }; // 修改state的方法是创建一个新的state，不可变数据
     case REDUCE_NUMBER:
       return {
         ...state,
-        count: state.count - parseInt(actions.number, 1),
+        count: state.count - parseInt(actions.number, 2),
       };
     default:
       return state;
@@ -50,7 +50,7 @@ class Counter extends React.Component {
     super(props);
     this.state = {
       count: 0,
-      number: 4,
+      number: 2,
     };
     this.onChangeNumber = this.onChangeNumber.bind(this);
   }
